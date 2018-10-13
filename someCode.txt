@@ -1,0 +1,34 @@
+	if(DIRECTION == "ASCENDING"){
+		LIST_IDS();
+		for (i = 0; i < p; i++){
+		max = grades[i][x];
+		max_pos = i;
+			if(max > grades [i][x]){
+				max = grades[i][x];
+				max_pos = i;
+				tempo = grades[i][x];
+				grades[i][x] = grades[max_pos][x];
+				grades[max_pos][x] = tempo;
+			}
+		} 
+		output_file_p2 << "++++ P2 AFTER SORTING IN " << DIRECTION << " ORDER: " << endl;
+		LIST_GRADE(x);
+	} else if (DIRECTION == "DESCENDING"){
+		LIST_GRADE(x);
+		for (i = 0; i < p; i++){
+		min = grades[i][x];
+		min_pos = i;
+			if(min > grades [i][x]){
+				min = grades[i][x];
+				min_pos = i;
+				tempo = grades[i][x];
+				grades[i][x] = grades[min_pos][x];
+				grades[min_pos][x] = tempo;
+			}
+
+		} //swap ids[i] w/ ids [min_pos]
+		output_file_p2 << "++++ P2 AFTER SORTING IN " << DIRECTION << " ORDER: " << endl;
+		LIST_GRADE(x);
+	} else {
+		output_file_p2 << "++++ P2 INPUT ERROR" << endl;
+	}
